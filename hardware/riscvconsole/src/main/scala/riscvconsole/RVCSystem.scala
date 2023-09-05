@@ -20,6 +20,12 @@ import riscvconsole.devices.xilinx.artya7ddr._
 import riscvconsole.devices.xilinx.nexys4ddr._
 import testchipip._
 
+//import riscvconsole.devices.aes_gcm._
+//import riscvconsole.devices.hmac_sha._
+import riscvconsole.devices.rsa._
+import riscvconsole.devices.aes._
+import riscvconsole.devices.sha3._
+
 case class SRAMConfig
 (
   address: BigInt,
@@ -40,6 +46,11 @@ class RVCSystem(implicit p: Parameters) extends RVCSubsystem
   with HasPeripheryFFT
   with CanHaveMasterAXI4MemPort
   with CanHavePeripheryTLSerial
+  //with HasPeripheryAES_GCMFull
+  //with HasPeripheryHMAC_SHAFull
+  with HasPeripheryRSAFull
+  with HasPeripheryAES
+  with HasPeripherySHA3
 {
   val spiDevs = p(PeripherySPIKey).map { ps =>
     SPIAttachParams(ps).attachTo(this)

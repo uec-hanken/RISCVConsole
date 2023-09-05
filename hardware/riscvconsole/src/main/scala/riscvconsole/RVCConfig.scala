@@ -20,6 +20,12 @@ class RVCPeripheralsConfig(gpio: Int = 14) extends Config((site, here, up) => {
     sifive.blocks.devices.spi.SPIParams(0x10002000))
   case sifive.blocks.devices.i2c.PeripheryI2CKey => Seq(
     sifive.blocks.devices.i2c.I2CParams(0x10003000))
+  case riscvconsole.devices.aes.PeripheryAESKey => List(
+    riscvconsole.devices.aes.AESParams(address =     BigInt(0x6500A000L)))
+  case riscvconsole.devices.sha3.PeripherySHA3Key => List(
+    riscvconsole.devices.sha3.SHA3Params(address =    BigInt(0x6500B000L)))
+  case riscvconsole.devices.rsa.PeripheryRSAKey => List(
+    riscvconsole.devices.rsa.RSAParams(address =    BigInt(0x6400E000L)))
   //case sifive.blocks.devices.spi.PeripherySPIFlashKey => Seq(
   //  sifive.blocks.devices.spi.SPIFlashParams(0x10003000, 0x20000000L))
   case MaskROMLocated(InSubsystem) => Seq(
