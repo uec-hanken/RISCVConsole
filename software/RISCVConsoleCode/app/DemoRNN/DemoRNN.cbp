@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="DemoRNN" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/DemoRNN" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="/media/sf_SharedUbuntu/0_Xiaoting.wav /media/sf_SharedUbuntu/0_Xiaoting.txt /media/sf_SharedUbuntu/0_Xiaoting.fft /media/sf_SharedUbuntu/0_Xiaoting.fftd /media/sf_SharedUbuntu/0_Xiaoting.mfcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/DemoRNN" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="../../lib/FFT_int" />
+			<Add directory="../../lib/MFCC" />
+		</Compiler>
+		<Linker>
+			<Add option="-lsndfile" />
+		</Linker>
+		<Unit filename="../../lib/FFT/fft4g.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../lib/FFT_int/fix_fft.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../lib/FFT_int/fix_fft.h" />
+		<Unit filename="../../lib/MFCC/libmfcc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../lib/MFCC/libmfcc.h" />
+		<Unit filename="src/main.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
